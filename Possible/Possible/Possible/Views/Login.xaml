@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Possible.Views.Login">
+
+    <AbsoluteLayout>
+
+
+        <Label Text="Número de telefone" FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds="0.55,0.35,0.6,0.2" Style="{StaticResource NormalTitleStyle}"
+               AbsoluteLayout.LayoutFlags="All"></Label>
+
+        <Entry Placeholder="(xx)xxxxxxxxx"  AbsoluteLayout.LayoutBounds="0.5,0.35,0.8,0.06" 
+               AbsoluteLayout.LayoutFlags="All" Visual="Default" BackgroundColor="Transparent" Style="{StaticResource MainEntryStyle}"
+               Text="{Binding Login}" HorizontalTextAlignment="Center" PlaceholderColor="Gray"></Entry>
+
+        <CheckBox  AbsoluteLayout.LayoutBounds="0.2,0.395,0.1,0.06" 
+               AbsoluteLayout.LayoutFlags="All" Visual="Default" BackgroundColor="Transparent"  ></CheckBox>
+
+        <Label Text="Aceito Termos de Condições" 
+               AbsoluteLayout.LayoutBounds="0.65,0.395,0.6,0.08" FontSize="Small" VerticalOptions="CenterAndExpand"
+               AbsoluteLayout.LayoutFlags="All"></Label>
+
+        <!--<Entry Placeholder="senha"  
+               AbsoluteLayout.LayoutBounds="0.5,0.65,200,40" AbsoluteLayout.LayoutFlags="PositionProportional"
+               Text="{Binding Senha}" IsPassword="True" PlaceholderColor="Gray" HorizontalTextAlignment="Center"></Entry>-->
+
+        <Button Text="Enviar" Command="{Binding LoginCommand}" BackgroundColor="#dd2705" Style="{StaticResource MainButtonStyle}"
+                TextColor="White" AbsoluteLayout.LayoutBounds="0.5,0.49,0.538,0.06" AbsoluteLayout.LayoutFlags="All" ></Button>
+
+
+        <BoxView Color="DimGray" AbsoluteLayout.LayoutBounds="0.1,0.559,0.4,0.002" AbsoluteLayout.LayoutFlags="All"></BoxView>
+
+        <Label  AbsoluteLayout.LayoutBounds="0.515,0.555,0.08,0.025" VerticalTextAlignment="Center" FontAttributes="Bold" AbsoluteLayout.LayoutFlags="All" Text="OU" TextColor="DimGray"></Label>
+
+        <BoxView Color="DimGray" AbsoluteLayout.LayoutBounds="0.9,0.559,0.4,0.002" AbsoluteLayout.LayoutFlags="All"></BoxView>
+
+        <Image Source="{customs:EmbeddedImage  motoCliente.Imagens.login_face.jpg}" 
+               AbsoluteLayout.LayoutBounds="0.5,0.68,0.6,0.2"
+               AbsoluteLayout.LayoutFlags="All"></Image>
+
+        <Image Source="{customs:EmbeddedImage  motoCliente.Imagens.login_google.jpg}" 
+               AbsoluteLayout.LayoutBounds="0.5,0.76,0.538,0.06" Aspect="Fill" 
+               AbsoluteLayout.LayoutFlags="All"></Image>
+
+    </AbsoluteLayout>
+
+</ContentPage>

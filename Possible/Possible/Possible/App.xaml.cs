@@ -4,24 +4,52 @@ using Possible.ViewModels;
 using Possible.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Possible.Resources;
+using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Possible
 {
     public partial class App
     {
-        /* 
-         * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.
-         * This imposes a limitation in which the App class must have a default constructor. 
-         * App(IPlatformInitializer initializer = null) cannot be handled by the Activator.
-         */
+
+        const int smallWightResolution = 768;
+        const int smallHeightResolution = 1280;
+     
         public App() : this(null) { }
 
         public App(IPlatformInitializer initializer) : base(initializer) { }
 
+        void LoadStyles()
+        {
+            if (IsASmallDevice())
+            {
+                dictionary.MergedDictionaries.Add(SmallDevicesStyle.SharedInstance);
+            }
+            else
+            {
+                dictionary.MergedDictionaries.Add(GeneralDevicesStyle.SharedInstance);
+            }
+        }
+
+        public static bool IsASmallDevice()
+        {
+            // Get Metrics
+            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
+
+            // Width (in pixels)
+            var width = mainDisplayInfo.Width;
+
+            // Height (in pixels)
+            var height = mainDisplayInfo.Height;
+            return (width <= smallWightResolution && height <= smallHeightResolution);
+        }
+
         protected override async void OnInitialized()
         {
             InitializeComponent();
+
+            LoadStyles();
 
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
@@ -30,6 +58,7 @@ namespace Possible
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<Login, LoginViewModel>();
         }
     }
 }

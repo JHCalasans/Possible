@@ -1,0 +1,4 @@
+C:\Users\17254\source\repos\Possible\Possible\Possible\Possible.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+C:\Users\17254\source\repos\Possible\Possible\Possible\Possible.Android\obj\Debug\90\build.props
+C:\Users\17254\source\repos\Possible\Possible\Possible\Possible.Android\obj\Debug\90\adb.props
+C:\Users\17254\source\repos\Possible\Possible\Possible\Possible.Android\obj\Debug\90\Possible.Android.csprojAssemblyReference.cache
