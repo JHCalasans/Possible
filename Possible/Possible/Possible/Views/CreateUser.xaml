@@ -3,6 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Possible.Views.CreateUser">
-  
+             x:Class="Possible.Views.CreateUser"
+             Title="Criar Usuário">
+
+    <StackLayout Padding="10">
+        
+        <Entry Placeholder="Name" 
+                Visual="Default"
+               Text="{Binding Name}" HorizontalTextAlignment="Center" PlaceholderColor="Gray"></Entry>
+
+        <Entry Placeholder="Password"  
+               Visual="Default"
+               Text="{Binding Password}" IsPassword="True" PlaceholderColor="Gray" HorizontalTextAlignment="Center"></Entry>
+
+        <Button Text="Criar"  BackgroundColor="Black" 
+                TextColor="White" ></Button>
+    </StackLayout>
 </ContentPage>

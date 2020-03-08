@@ -1,10 +1,12 @@
-﻿using Prism.Commands;
+﻿using Possible.Models;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Possible.ViewModels
 {
@@ -35,9 +37,14 @@ namespace Possible.ViewModels
 
         }
 
-        public void CreateUser()
+        public async void CreateUser()
         {
-
+            User user = new User() { Name = this.Name, Password = this.Password };
+            var resp = await App.SQLiteDb.SaveUserAsync(user);
+           if(resp == 1)
+                await NavigationService.NavigateAsync("//NavigationPage/Login", null, true);
+           else
+                await DialogService.DisplayAlertAsync("Aviso", "Falha ao inserir usuário", "OK");
         }
     }
 }
