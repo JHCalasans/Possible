@@ -45,7 +45,8 @@ namespace Possible.ViewModels
         {
 
         }
-
+ 
+       
         public virtual void Destroy()
         {
 

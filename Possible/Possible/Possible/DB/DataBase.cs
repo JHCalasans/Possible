@@ -31,6 +31,13 @@ namespace Possible.DB
                             .FirstOrDefaultAsync();
         }
 
+
+        public Task<List<Item>> GetItensByUserAsync(int userID)
+        {
+            return _database.Table<Item>()
+                            .Where(i => i.UserID == userID)
+                            .ToListAsync();
+        }
         public Task<int> SaveItemAsync(Item item)
         {
             if (item.ItemID != 0)
@@ -60,6 +67,13 @@ namespace Possible.DB
                             .FirstOrDefaultAsync();
         }
 
+        public Task<User> GetUserAsync(string name, string password)
+        {
+            return _database.Table<User>()
+                            .Where(i => i.Name.Equals(name) && i.Password.Equals(password))
+                            .FirstOrDefaultAsync();
+        }
+
         public Task<int> SaveUserAsync(User user)
         {
             if (user.UserID != 0)
@@ -79,6 +93,13 @@ namespace Possible.DB
 
         public Task<List<Assignment>> GetAssignmentsAsync()
         {
+            return _database.Table<Assignment>().ToListAsync();
+        }
+
+        public Task<List<Assignment>> GetAssignmentsAsync(List<int> itensID)
+        {
+            //TODO
+
             return _database.Table<Assignment>().ToListAsync();
         }
 

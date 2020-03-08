@@ -4,7 +4,7 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Possible.Views.CreateUser"
-             Title="Criar Usuário">
+             Title="Create User">
 
     <StackLayout Padding="10">
         
@@ -16,7 +16,7 @@
                Visual="Default"
                Text="{Binding Password}" IsPassword="True" PlaceholderColor="Gray" HorizontalTextAlignment="Center"></Entry>
 
-        <Button Text="Criar"  BackgroundColor="Black" 
+        <Button Text="Create" Command="{Binding CreateUserCommand}"  BackgroundColor="Black" 
                 TextColor="White" ></Button>
     </StackLayout>
 </ContentPage>

@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Genymotion Samsung Galaxy S7</SelectedDevice>
     <DefaultDevice>Nexus_5_API_25</DefaultDevice>
+    <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

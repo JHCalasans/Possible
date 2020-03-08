@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "Possible/1.0.0": {
         "dependencies": {
+          "Acr.UserDialogs": "7.1.0.440",
           "NETStandard.Library": "2.0.3",
           "Prism.Unity.Forms": "7.2.0.1367",
           "Xamarin.Essentials": "1.5.1",
@@ -17,6 +18,14 @@
         },
         "runtime": {
           "Possible.dll": {}
+        }
+      },
+      "Acr.UserDialogs/7.1.0.440": {
+        "runtime": {
+          "lib/netstandard2.0/Acr.UserDialogs.dll": {
+            "assemblyVersion": "7.1.0.440",
+            "fileVersion": "7.1.0.440"
+          }
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -166,6 +175,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Acr.UserDialogs/7.1.0.440": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A0f7B+vrtCB7IOYBPTFn1Ijc7kVVpXu8AHfVyl4+BnesMuzpd7QOOvyeFCZvJTC+VT7Cng8Q1iuSYQW5PVjiqg==",
+      "path": "acr.userdialogs/7.1.0.440",
+      "hashPath": "acr.userdialogs.7.1.0.440.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",

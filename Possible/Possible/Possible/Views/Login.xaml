@@ -20,10 +20,10 @@
                AbsoluteLayout.LayoutBounds="0.5,0.55,200,40" AbsoluteLayout.LayoutFlags="PositionProportional" Visual="Default"
                Text="{Binding Password}" IsPassword="True" PlaceholderColor="Gray" HorizontalTextAlignment="Center"></Entry>
 
-        <Button Text="Entrar"  BackgroundColor="Black" 
+        <Button Text="LogIn"  BackgroundColor="Black"  Command="{Binding LoginCommand}" 
                 TextColor="White" AbsoluteLayout.LayoutBounds="0.5,0.7,200,50" AbsoluteLayout.LayoutFlags="PositionProportional" ></Button>
 
-        <Label Text="CRIAR USUÁRIO" AbsoluteLayout.LayoutBounds="0.75,0.9,200,50" AbsoluteLayout.LayoutFlags="PositionProportional" FontSize="16" FontAttributes="Bold">
+        <Label Text="CREATE USER" AbsoluteLayout.LayoutBounds="0.75,0.9,200,50" AbsoluteLayout.LayoutFlags="PositionProportional" FontSize="16" FontAttributes="Bold">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding GoToUserCommand}"></TapGestureRecognizer>
             </Label.GestureRecognizers>

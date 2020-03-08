@@ -2,6 +2,30 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
+      "Acr.UserDialogs/7.1.0.440": {
+        "type": "package",
+        "dependencies": {
+          "BTProgressHUD": "1.3.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        }
+      },
+      "BTProgressHUD/1.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        }
+      },
       "Prism.Core/7.2.0.1367": {
         "type": "package",
         "compile": {
@@ -256,6 +280,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.UserDialogs": "7.1.0.440",
           "Prism.Unity.Forms": "7.2.0.1367",
           "Xamarin.Essentials": "1.5.1",
           "Xamarin.Forms": "4.5.0.356",
@@ -270,6 +295,30 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
+      "Acr.UserDialogs/7.1.0.440": {
+        "type": "package",
+        "dependencies": {
+          "BTProgressHUD": "1.3.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        }
+      },
+      "BTProgressHUD/1.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        }
+      },
       "Prism.Core/7.2.0.1367": {
         "type": "package",
         "compile": {
@@ -524,6 +573,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.UserDialogs": "7.1.0.440",
           "Prism.Unity.Forms": "7.2.0.1367",
           "Xamarin.Essentials": "1.5.1",
           "Xamarin.Forms": "4.5.0.356",
@@ -538,6 +588,30 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
+      "Acr.UserDialogs/7.1.0.440": {
+        "type": "package",
+        "dependencies": {
+          "BTProgressHUD": "1.3.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        }
+      },
+      "BTProgressHUD/1.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        }
+      },
       "Prism.Core/7.2.0.1367": {
         "type": "package",
         "compile": {
@@ -792,6 +866,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.UserDialogs": "7.1.0.440",
           "Prism.Unity.Forms": "7.2.0.1367",
           "Xamarin.Essentials": "1.5.1",
           "Xamarin.Forms": "4.5.0.356",
@@ -806,6 +881,30 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
+      "Acr.UserDialogs/7.1.0.440": {
+        "type": "package",
+        "dependencies": {
+          "BTProgressHUD": "1.3.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        }
+      },
+      "BTProgressHUD/1.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        }
+      },
       "Prism.Core/7.2.0.1367": {
         "type": "package",
         "compile": {
@@ -1060,6 +1159,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.UserDialogs": "7.1.0.440",
           "Prism.Unity.Forms": "7.2.0.1367",
           "Xamarin.Essentials": "1.5.1",
           "Xamarin.Forms": "4.5.0.356",
@@ -1075,6 +1175,62 @@
     }
   },
   "libraries": {
+    "Acr.UserDialogs/7.1.0.440": {
+      "sha512": "A0f7B+vrtCB7IOYBPTFn1Ijc7kVVpXu8AHfVyl4+BnesMuzpd7QOOvyeFCZvJTC+VT7Cng8Q1iuSYQW5PVjiqg==",
+      "type": "package",
+      "path": "acr.userdialogs/7.1.0.440",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "acr.userdialogs.7.1.0.440.nupkg.sha512",
+        "acr.userdialogs.nuspec",
+        "lib/monoandroid10.0/Acr.UserDialogs.dll",
+        "lib/monoandroid10.0/Acr.UserDialogs.pdb",
+        "lib/monoandroid10.0/Acr.UserDialogs.xml",
+        "lib/monoandroid90/Acr.UserDialogs.dll",
+        "lib/monoandroid90/Acr.UserDialogs.pdb",
+        "lib/monoandroid90/Acr.UserDialogs.xml",
+        "lib/netstandard2.0/Acr.UserDialogs.dll",
+        "lib/netstandard2.0/Acr.UserDialogs.pdb",
+        "lib/netstandard2.0/Acr.UserDialogs.xml",
+        "lib/uap10.0.16299/Acr.UserDialogs.dll",
+        "lib/uap10.0.16299/Acr.UserDialogs.pdb",
+        "lib/uap10.0.16299/Acr.UserDialogs.pri",
+        "lib/uap10.0.16299/Acr.UserDialogs.xml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Acr.UserDialogs.xr.xml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/ActionSheetContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/DatePickerControl.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/LoginContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/ProgressContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/TimePickerControl.xaml",
+        "lib/xamarinios10/Acr.UserDialogs.dll",
+        "lib/xamarinios10/Acr.UserDialogs.pdb",
+        "lib/xamarinios10/Acr.UserDialogs.xml",
+        "lib/xamarinmac20/Acr.UserDialogs.dll",
+        "lib/xamarinmac20/Acr.UserDialogs.pdb",
+        "lib/xamarinmac20/Acr.UserDialogs.xml",
+        "lib/xamarintvos10/Acr.UserDialogs.dll",
+        "lib/xamarintvos10/Acr.UserDialogs.pdb",
+        "lib/xamarintvos10/Acr.UserDialogs.xml",
+        "readme.txt"
+      ]
+    },
+    "BTProgressHUD/1.3.1": {
+      "sha512": "3NLBJFd039vRplgww5tiGdlTU5ztLD5LvB6Fjr62y1Ov/cKRkpe7jEDWX/TwyYTKyLwk5BQ+Kzs4HVm72QyAvQ==",
+      "type": "package",
+      "path": "btprogresshud/1.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NOTICE",
+        "btprogresshud.1.3.1.nupkg.sha512",
+        "btprogresshud.nuspec",
+        "lib/xamarinios10/BTProgressHUD.dll",
+        "lib/xamarinios10/BTProgressHUD.pdb",
+        "lib/xamarinios10/BTProgressHUD.xml"
+      ]
+    },
     "Prism.Core/7.2.0.1367": {
       "sha512": "vrz2M/Hr9ItcAUvnT+n76ak6qPQMgJfyTYFSKqphveb9ibohm70vzc0cWu1jkeBY5XPS9RbUluXMa9WQGM0kPw==",
       "type": "package",
@@ -1645,6 +1801,7 @@
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
+      "Acr.UserDialogs >= 7.1.0.440",
       "Possible >= 1.0.0",
       "Prism.Unity.Forms >= 7.2.0.1367",
       "Xamarin.Essentials >= 1.5.1",
@@ -1694,6 +1851,10 @@
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
+          "Acr.UserDialogs": {
+            "target": "Package",
+            "version": "[7.1.0.440, )"
+          },
           "Prism.Unity.Forms": {
             "target": "Package",
             "version": "[7.2.0.1367, )"

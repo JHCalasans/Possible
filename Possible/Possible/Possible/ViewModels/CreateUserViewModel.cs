@@ -41,9 +41,12 @@ namespace Possible.ViewModels
         {
             User user = new User() { Name = this.Name, Password = this.Password };
             var resp = await App.SQLiteDb.SaveUserAsync(user);
-           if(resp == 1)
+            if (resp == 1)
+            {
+                await DialogService.DisplayAlertAsync("Aviso", "Usuário inserido", "OK");
                 await NavigationService.NavigateAsync("//NavigationPage/Login", null, true);
-           else
+            }
+            else
                 await DialogService.DisplayAlertAsync("Aviso", "Falha ao inserir usuário", "OK");
         }
     }

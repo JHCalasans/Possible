@@ -13,5 +13,10 @@ namespace Possible.Views
         {
             InitializeComponent();
         }
+
+        private void ListItens_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ListItens.SelectedItem = null;
+        }
     }
 }

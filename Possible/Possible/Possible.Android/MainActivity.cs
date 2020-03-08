@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Prism;
@@ -17,6 +18,7 @@ namespace Possible.Droid
             base.OnCreate(bundle);
 
             Xamarin.Essentials.Platform.Init(this, bundle);
+            UserDialogs.Init(this);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));

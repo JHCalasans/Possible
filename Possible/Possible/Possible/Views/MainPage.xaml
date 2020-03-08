@@ -2,10 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Possible.Views.MainPage"
-             Title="{Binding Title}">
+             Title="Tarefas">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Formsds and Prism!" />
+    <StackLayout>
+
+        <Button Text="New Item" Command="{Binding NewItemCommand}"></Button>
+
+        <BoxView BackgroundColor="#9d2704" HeightRequest="1"></BoxView>
+
+
+        <ListView ItemsSource="{Binding Itens}" HasUnevenRows="True"  x:Name="ListItens" 
+                  ItemSelected="ListItens_ItemSelected" >
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="10,0,5,0">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Description: " TextColor="Black" VerticalOptions="Center" WidthRequest="80" ></Label>
+                                <Label Text="{Binding Description}" TextColor="Gray"></Label>
+                            </StackLayout>                     
+
+                            <BoxView BackgroundColor="#9d2704" HeightRequest="1"></BoxView>
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </StackLayout>
 
 </ContentPage>
