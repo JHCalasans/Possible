@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {}
+    "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {}
   },
   "projects": {
-    "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {
+    "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj",
+        "projectUniqueName": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj",
         "projectName": "Possible",
-        "projectPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj",
-        "packagesPath": "C:\\Users\\17254\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\obj\\",
+        "projectPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj",
+        "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\17254\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -59,7 +59,11 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[3.6.0.344457, )"
+              "version": "[4.5.0.356, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.6.292, )"
             }
           },
           "imports": [

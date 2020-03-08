@@ -6,3 +6,16 @@ C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netsta
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.AssemblyInfo.cs
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\bin\Debug\netstandard2.0\Possible.deps.json
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\bin\Debug\netstandard2.0\Possible.dll
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Resources\GeneralDevicesStyle.xaml.g.cs
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Resources\SmallDevicesStyle.xaml.g.cs
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Views\Login.xaml.g.cs
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.AssemblyInfoInputs.cache
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.AssemblyInfo.cs
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.dll
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.pdb
+D:\Repositorios\Possible\Possible\Possible\Possible\bin\Debug\netstandard2.0\Possible.deps.json
+D:\Repositorios\Possible\Possible\Possible\Possible\bin\Debug\netstandard2.0\Possible.dll
+D:\Repositorios\Possible\Possible\Possible\Possible\bin\Debug\netstandard2.0\Possible.pdb
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.csprojAssemblyReference.cache
