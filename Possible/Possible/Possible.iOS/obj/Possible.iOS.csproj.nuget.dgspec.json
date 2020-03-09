@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj": {}
+    "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj": {}
   },
   "projects": {
-    "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj": {
+    "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
         "projectName": "Possible.iOS",
-        "projectPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
-        "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
-        "outputPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\obj\\",
+        "projectPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
+        "packagesPath": "C:\\Users\\17254\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\17254\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {
-                "projectPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj"
+              "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {
+                "projectPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj"
               }
             }
           }
@@ -77,21 +77,21 @@
         }
       }
     },
-    "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {
+    "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj",
+        "projectUniqueName": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj",
         "projectName": "Possible",
-        "projectPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj",
-        "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
-        "outputPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\obj\\",
+        "projectPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj",
+        "packagesPath": "C:\\Users\\17254\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\17254\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

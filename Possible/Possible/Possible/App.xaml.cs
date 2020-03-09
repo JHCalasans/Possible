@@ -76,6 +76,7 @@ namespace Possible
             containerRegistry.RegisterForNavigation<Login, LoginViewModel>();
             containerRegistry.RegisterForNavigation<CreateUser, CreateUserViewModel>();
             containerRegistry.RegisterForNavigation<CreateItem, CreateItemViewModel>();
+            containerRegistry.RegisterForNavigation<CreateAssignment, CreateAssignmentViewModel>();
         }
     }
 }

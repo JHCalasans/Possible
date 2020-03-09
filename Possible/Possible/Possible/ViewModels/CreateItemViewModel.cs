@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace Possible.ViewModels
 {
@@ -36,6 +37,7 @@ namespace Possible.ViewModels
             var resp = await App.SQLiteDb.SaveItemAsync(item);
             if (resp == 1)
             {
+                MessagingCenter.Send(this, "ItemCreated", item);
                 await DialogService.DisplayAlertAsync("Aviso", "Item inserido", "OK");
             }
             else

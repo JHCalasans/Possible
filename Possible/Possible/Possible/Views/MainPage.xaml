@@ -2,31 +2,64 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Possible.Views.MainPage"
-             Title="Tarefas">
+             Title="Tarefas"
+             xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:Possible.ViewModels"
+             x:Name="Page2">
 
-    <StackLayout>
+    <StackLayout Padding="5">
 
-        <Button Text="New Item" Command="{Binding NewItemCommand}"></Button>
+        <Button Text="New Item" Command="{Binding NewItemCommand}" BackgroundColor="Black" TextColor="White"></Button>
 
-        <BoxView BackgroundColor="#9d2704" HeightRequest="1"></BoxView>
+        <ListView ItemsSource="{Binding AssignmentsAgrupados}" HasUnevenRows="True"  x:Name="ListItens" 
+                  ItemSelected="ListItens_ItemSelected"  IsGroupingEnabled="True" GroupDisplayBinding="{Binding ItemDescription}">
 
+            <!--<ListView.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SelectItemCommand}"  
+                             EventArgsParameterPath="Item" EventArgsConverter="{StaticResource ItemTappedConverter}" ></behaviors:EventToCommandBehavior>
+            </ListView.Behaviors>-->
+            
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <!--<TextCell Text="{Binding ItemDescription}" TextColor="DarkGreen" ></TextCell>-->
+                    <ViewCell >
+                        <StackLayout BackgroundColor="Gray" Orientation="Horizontal">
+                            <!--<StackLayout.GestureRecognizers>
+                               
+                            </StackLayout.GestureRecognizers>-->
+                            <Label Text="{Binding ItemDescription}" TextColor="Black" FontSize="Large"/>
 
-        <ListView ItemsSource="{Binding Itens}" HasUnevenRows="True"  x:Name="ListItens" 
-                  ItemSelected="ListItens_ItemSelected" >
+                            <Label Text="+" TextColor="Black" HorizontalOptions="EndAndExpand" FontAttributes="Bold" FontSize="Large" Margin="0,0,10,0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="{Binding ItemID}" 
+                                    Command="{Binding Path=BindingContext. SelectItemCommand, Source={x:Reference Name=ListItens}}"></TapGestureRecognizer>
+                                </Label.GestureRecognizers>
+
+                            </Label>
+
+                            <!--<Button Text="+" TextColor="Black" CommandParameter="{Binding ItemID}"  HorizontalOptions="EndAndExpand"
+                                    Command="{Binding Path=BindingContext. SelectItemCommand, Source={x:Reference Name=ListItens}}" >
+                               
+                            </Button>-->
+                        </StackLayout>
+                       
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Margin="10,0,5,0">
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Description: " TextColor="Black" VerticalOptions="Center" WidthRequest="80" ></Label>
-                                <Label Text="{Binding Description}" TextColor="Gray"></Label>
-                            </StackLayout>                     
+                    <TextCell Text="{Binding Title}" TextColor="Blue" >
+                       
+                           
+                                <!--<Label Text="{Binding Title}" TextColor="Gray" ></Label>
+                               
+                                           
 
-                            <BoxView BackgroundColor="#9d2704" HeightRequest="1"></BoxView>
-                        </StackLayout>
+                            <BoxView BackgroundColor="#000055" HeightRequest="1"></BoxView>-->
+                       
 
-                    </ViewCell>
+                    </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
