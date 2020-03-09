@@ -9,7 +9,15 @@
 
     <StackLayout Padding="5">
 
-        <Button Text="New Item" Command="{Binding NewItemCommand}" BackgroundColor="Black" TextColor="White"></Button>
+        <Button Text="Add New List" Command="{Binding NewItemCommand}" BackgroundColor="Black" TextColor="White"></Button>
+
+        <Picker Title="Filter Period" ItemsSource="{Binding Periods}" SelectedItem="{Binding SelectedPeriod}" 
+                ItemDisplayBinding="{Binding Label}" >
+
+            <Picker.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="SelectedIndexChanged" Command="{Binding PeriodChangedCommand}"></behaviors:EventToCommandBehavior>
+            </Picker.Behaviors>
+        </Picker>
 
         <ListView ItemsSource="{Binding AssignmentsAgrupados}" HasUnevenRows="True"  x:Name="ListItens" 
                   ItemSelected="ListItens_ItemSelected"  IsGroupingEnabled="True" GroupDisplayBinding="{Binding ItemDescription}">
@@ -23,13 +31,14 @@
                 <DataTemplate>
                     <!--<TextCell Text="{Binding ItemDescription}" TextColor="DarkGreen" ></TextCell>-->
                     <ViewCell >
-                        <StackLayout BackgroundColor="Gray" Orientation="Horizontal">
+                        <StackLayout BackgroundColor="LightGray" Orientation="Horizontal" Margin="0,5,0,5">
                             <!--<StackLayout.GestureRecognizers>
                                
                             </StackLayout.GestureRecognizers>-->
                             <Label Text="{Binding ItemDescription}" TextColor="Black" FontSize="Large"/>
 
-                            <Label Text="+" TextColor="Black" HorizontalOptions="EndAndExpand" FontAttributes="Bold" FontSize="Large" Margin="0,0,10,0">
+                            <Label Text="ADD" TextColor="DarkGreen" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center"
+                                   FontAttributes="Bold" FontSize="Default" Margin="0,0,10,0">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer CommandParameter="{Binding ItemID}" 
                                     Command="{Binding Path=BindingContext. SelectItemCommand, Source={x:Reference Name=ListItens}}"></TapGestureRecognizer>
@@ -49,20 +58,14 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Title}" TextColor="Blue" >
-                       
-                           
-                                <!--<Label Text="{Binding Title}" TextColor="Gray" ></Label>
-                               
-                                           
-
-                            <BoxView BackgroundColor="#000055" HeightRequest="1"></BoxView>-->
-                       
-
+                    <TextCell Text="{Binding Title}" TextColor="{Binding Color}" Detail="{Binding DateString}" >        
                     </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+
+        <Button Text="LogOff"  BackgroundColor="#AA0000" TextColor="White" VerticalOptions="End" HeightRequest="35"></Button>
 
     </StackLayout>
 

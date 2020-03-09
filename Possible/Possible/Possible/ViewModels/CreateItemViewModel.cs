@@ -38,10 +38,11 @@ namespace Possible.ViewModels
             if (resp == 1)
             {
                 MessagingCenter.Send(this, "ItemCreated", item);
-                await DialogService.DisplayAlertAsync("Aviso", "Item inserido", "OK");
+                Description = "";
+                await DialogService.DisplayAlertAsync("Succes", "Item saved", "OK");
             }
             else
-                await DialogService.DisplayAlertAsync("Aviso", "Falha ao inserir item", "OK");
+                await DialogService.DisplayAlertAsync("Warning", "Something went wrong", "OK");
         }
     }
 }

@@ -14,5 +14,12 @@ namespace Possible.Models
         public DateTime Date { get; set; }
         public String Color { get; set; }
         public int ItemID { get; set; }
+
+        public String DateString 
+        { 
+            get { return Date.ToString("MM/dd/yyyy"); }
+        }
+
+
     }
 }

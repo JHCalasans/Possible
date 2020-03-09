@@ -96,12 +96,16 @@ namespace Possible.DB
             return _database.Table<Assignment>().ToListAsync();
         }
 
-        public Task<List<Assignment>> GetAssignmentsAsync(List<int> itensID)
+        public Task<List<Assignment>> GetAssignmentsByItemAsync(int itemID)
         {
-            //TODO
+            return _database.Table<Assignment>()
+                            .Where(assi => assi.ItemID == itemID)
+                            .ToListAsync();
 
-            return _database.Table<Assignment>().ToListAsync();
         }
+
+
+       
 
         public Task<Assignment> GetAssignmentAsync(int id)
         {
@@ -126,5 +130,7 @@ namespace Possible.DB
         {
             return _database.DeleteAsync(assignment);
         }
+
+       
     }
 }

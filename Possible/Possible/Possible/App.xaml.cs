@@ -65,8 +65,10 @@ namespace Possible
             InitializeComponent();
 
             LoadStyles();
-
-            await NavigationService.NavigateAsync("NavigationPage/Login");
+            if (Preferences.ContainsKey("LoggedUserID"))
+                await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            else
+                await NavigationService.NavigateAsync("NavigationPage/Login");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

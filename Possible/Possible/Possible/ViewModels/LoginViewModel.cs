@@ -51,7 +51,7 @@ namespace Possible.ViewModels
         {
             try
             {
-                UserDialogs.Instance.ShowLoading("Carregando...");
+                UserDialogs.Instance.ShowLoading("Loading...");
                 User user = await App.SQLiteDb.GetUserAsync(Name, Password);
                 if (user == null)
                     await DialogService.DisplayAlertAsync("Aviso", "Falha ao inserir usuário", "OK");
@@ -59,10 +59,8 @@ namespace Possible.ViewModels
                 {
                     Preferences.Set("LoggedUserID", user.UserID);
                     Preferences.Set("LoggedUserName", user.Name);
-                    List<Item> itens = await App.SQLiteDb.GetItensByUserAsync(user.UserID);
-                    var navParam = new NavigationParameters();
-                    navParam.Add("Itens", itens);
-                    await NavigationService.NavigateAsync("//NavigationPage/MainPage", navParam);
+                   
+                    await NavigationService.NavigateAsync("//NavigationPage/MainPage");
                 }
             }catch(Exception e)
             {

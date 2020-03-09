@@ -4,14 +4,21 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Possible.Views.CreateAssignment"
-             Title="Create Assignment">
+             Title="Create Assignment"
+             Visual="Material">
 
     <StackLayout Padding="10">
-        <Label Text=""></Label>
+        <Label Text="{Binding LabelItemDescription}" TextColor="Black" HorizontalOptions="Center" FontSize="Subtitle"></Label>
         
-        <Entry Placeholder="Description" 
-                Visual="Default"
+        <Entry Placeholder="Title"                
                Text="{Binding Assignment.Title}" HorizontalTextAlignment="Center" PlaceholderColor="Gray"></Entry>
+
+        <Label Text="Assignment Date:"></Label>
+        <DatePicker  Date="{Binding Assignment.Date}"  MinimumDate="{Binding CurrentDate}"></DatePicker>
+
+        <Label Text="Assignment Color:"></Label>
+        <Picker Title="Choose a color" ItemsSource="{Binding Colors}" SelectedItem="{Binding SelectedColor}" 
+                ItemDisplayBinding="{Binding Label}"></Picker>
 
         <Button Text="Create" Command="{Binding CreateAssignmentCommand}"  BackgroundColor="Black" 
                 TextColor="White" ></Button>
