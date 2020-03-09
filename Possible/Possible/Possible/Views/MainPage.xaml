@@ -19,17 +19,16 @@
             </Picker.Behaviors>
         </Picker>
 
+        
         <ListView ItemsSource="{Binding AssignmentsAgrupados}" HasUnevenRows="True"  x:Name="ListItens" 
                   ItemSelected="ListItens_ItemSelected"  IsGroupingEnabled="True" GroupDisplayBinding="{Binding ItemDescription}">
 
-            <!--<ListView.Behaviors>
-                <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding SelectItemCommand}"  
+            <ListView.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding RemoveAssignmentCommand}"  
                              EventArgsParameterPath="Item" EventArgsConverter="{StaticResource ItemTappedConverter}" ></behaviors:EventToCommandBehavior>
-            </ListView.Behaviors>-->
-            
+            </ListView.Behaviors>
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
-                    <!--<TextCell Text="{Binding ItemDescription}" TextColor="DarkGreen" ></TextCell>-->
                     <ViewCell >
                         <StackLayout BackgroundColor="LightGray" Orientation="Horizontal" Margin="0,5,0,5">
                             <!--<StackLayout.GestureRecognizers>
@@ -37,7 +36,17 @@
                             </StackLayout.GestureRecognizers>-->
                             <Label Text="{Binding ItemDescription}" TextColor="Black" FontSize="Large"/>
 
-                            <Label Text="ADD" TextColor="DarkGreen" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center"
+                            <Label Text="REMOVE" TextColor="DarkRed" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" 
+                                   
+                                   FontAttributes="Bold" FontSize="Default" Margin="0,0,10,0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="{Binding ItemID}" 
+                                    Command="{Binding Path=BindingContext. RemoveItemCommand, Source={x:Reference Name=ListItens}}"></TapGestureRecognizer>
+                                </Label.GestureRecognizers>
+
+                            </Label>
+
+                            <Label Text="ADD" TextColor="DarkGreen" HorizontalOptions="End" VerticalTextAlignment="Center"
                                    FontAttributes="Bold" FontSize="Default" Margin="0,0,10,0">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer CommandParameter="{Binding ItemID}" 
@@ -46,10 +55,6 @@
 
                             </Label>
 
-                            <!--<Button Text="+" TextColor="Black" CommandParameter="{Binding ItemID}"  HorizontalOptions="EndAndExpand"
-                                    Command="{Binding Path=BindingContext. SelectItemCommand, Source={x:Reference Name=ListItens}}" >
-                               
-                            </Button>-->
                         </StackLayout>
                        
                     </ViewCell>
@@ -65,7 +70,8 @@
         </ListView>
 
 
-        <Button Text="LogOff"  BackgroundColor="#AA0000" TextColor="White" VerticalOptions="End" HeightRequest="35"></Button>
+        <Button Text="LogOff"  BackgroundColor="#AA0000" TextColor="White" Command="{Binding LogOffCommand}"
+                VerticalOptions="End" HeightRequest="35"></Button>
 
     </StackLayout>
 

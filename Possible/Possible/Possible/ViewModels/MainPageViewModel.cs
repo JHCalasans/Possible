@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using Possible.Models;
+using Possible.Views;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -22,6 +23,15 @@ namespace Possible.ViewModels
 
         public DelegateCommand PeriodChangedCommand =>
         new DelegateCommand(PeriodChanged);
+
+        public DelegateCommand<int?> RemoveItemCommand =>
+        new DelegateCommand<int?>(RemoveItem);
+
+        public DelegateCommand LogOffCommand =>
+       new DelegateCommand(LogOff);
+
+        public DelegateCommand<Assignment> RemoveAssignmentCommand =>
+     new DelegateCommand<Assignment>(RemoveAssignment);
 
         public DelegateCommand NewItemCommand => new DelegateCommand(GoToNewItem);
 
@@ -169,9 +179,9 @@ namespace Possible.ViewModels
                 List<Assignment> ListAssignments = await App.SQLiteDb.GetAssignmentsByItemAsync(element.ItemID);
                 foreach (Assignment assi in ListAssignments)
                 {
-                    if (SelectedPeriod.Value == 2 && DatesAreInTheSameWeek(assi.Date, DateTime.Now))                    
-                       listaObj.Add(assi);
-                    else if(SelectedPeriod.Value == 1 && DatesAreInTheSameDay(assi.Date,DateTime.Now))
+                    if (SelectedPeriod.Value == 2 && DatesAreInTheSameWeek(assi.Date, DateTime.Now))
+                        listaObj.Add(assi);
+                    else if (SelectedPeriod.Value == 1 && DatesAreInTheSameDay(assi.Date, DateTime.Now))
                         listaObj.Add(assi);
                     else if (SelectedPeriod.Value == 3 && assi.Date.Month == DateTime.Now.Month && assi.Date.Year == DateTime.Now.Year)
                         listaObj.Add(assi);
@@ -194,6 +204,44 @@ namespace Possible.ViewModels
             navParam.Add("Item", item);
             await NavigationService.NavigateAsync("CreateAssignment", navParam);
         }
+        private async void LogOff()
+        {
+            Preferences.Clear();
+            Application.Current.MainPage = new Login();
+        }
+
+        private async void RemoveItem(int? ItemID)
+        {
+            Item item = Itens.Find(it => it.ItemID == ItemID);
+            var resposta = await UserDialogs.Instance.ConfirmAsync("Remove List Item?", item.Description, "Yes", "No");
+            if (resposta)
+            {
+                List<Assignment> ListAssignments = await App.SQLiteDb.GetAssignmentsByItemAsync(item.ItemID);
+                foreach (Assignment assi in ListAssignments)
+                {
+                    await App.SQLiteDb.DeleteAssignmentAsync(assi);
+                }
+                ListObject obj = AssignmentsAgrupados.Where(assi => assi.ItemID == item.ItemID).FirstOrDefault();
+                AssignmentsAgrupados.Remove(obj);
+                Itens.Remove(item);
+                await App.SQLiteDb.DeleteItemAsync(item);
+            }
+        }
+
+        private async void RemoveAssignment(Assignment assignment)
+        {
+
+            var resposta = await UserDialogs.Instance.ConfirmAsync("Remove Assignment?", assignment.Title, "Yes", "No");
+            if (resposta)
+            {
+
+               ListObject listaObj =  AssignmentsAgrupados.Where(obj => obj.ItemID == assignment.ItemID).FirstOrDefault();
+                listaObj.Remove(assignment);
+               // AssignmentsAgrupados.Where(assi => assi.Assignments.Remove(assignment));
+
+                await App.SQLiteDb.DeleteAssignmentAsync(assignment);
+            }
+        }
 
         private bool DatesAreInTheSameWeek(DateTime date1, DateTime date2)
         {
@@ -207,7 +255,7 @@ namespace Possible.ViewModels
 
         private bool DatesAreInTheSameDay(DateTime date1, DateTime date2)
         {
-           
+
 
             return date1.Day == date2.Day && date1.Month == date2.Month && date1.Year == date2.Year;
         }

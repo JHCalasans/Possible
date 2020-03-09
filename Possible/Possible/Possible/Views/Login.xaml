@@ -12,9 +12,9 @@
                AbsoluteLayout.LayoutBounds="0.5,0.2,0.6,0.2"
                AbsoluteLayout.LayoutFlags="All"></Image>
 
-        <Entry Placeholder="Name"  AbsoluteLayout.LayoutBounds="0.5,0.45,200,40"  
+        <customs:CustomEntry Placeholder="Name"  AbsoluteLayout.LayoutBounds="0.5,0.45,200,40"  
                AbsoluteLayout.LayoutFlags="PositionProportional" Visual="Default"
-               Text="{Binding Name}" HorizontalTextAlignment="Center" PlaceholderColor="Gray"></Entry>
+               Text="{Binding Name}" HorizontalTextAlignment="Center" PlaceholderColor="Gray"></customs:CustomEntry>
 
         <Entry Placeholder="Password"  
                AbsoluteLayout.LayoutBounds="0.5,0.55,200,40" AbsoluteLayout.LayoutFlags="PositionProportional" Visual="Default"

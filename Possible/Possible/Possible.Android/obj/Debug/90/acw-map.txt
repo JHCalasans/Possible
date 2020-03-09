@@ -1,3 +1,6 @@
+Possible.Droid.CustomEntryRenderer, Possible.Android;crc648060dc286b4f36d7.CustomEntryRenderer
+Possible.Droid.CustomEntryRenderer;crc648060dc286b4f36d7.CustomEntryRenderer
+possible.droid.CustomEntryRenderer;crc648060dc286b4f36d7.CustomEntryRenderer
 Possible.Droid.MainActivity, Possible.Android;crc648060dc286b4f36d7.MainActivity
 Possible.Droid.MainActivity;crc648060dc286b4f36d7.MainActivity
 possible.droid.MainActivity;crc648060dc286b4f36d7.MainActivity
