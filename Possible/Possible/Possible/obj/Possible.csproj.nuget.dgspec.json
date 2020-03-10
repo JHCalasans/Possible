@@ -57,6 +57,22 @@
               "target": "Package",
               "version": "[7.2.0.1367, )"
             },
+            "System.ServiceModel.Duplex": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.NetTcp": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
+            "System.ServiceModel.Security": {
+              "target": "Package",
+              "version": "[4.4.*, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.1, )"

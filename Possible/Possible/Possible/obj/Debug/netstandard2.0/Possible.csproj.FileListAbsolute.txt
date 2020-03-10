@@ -30,3 +30,4 @@ D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Pos
 D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\XamlC.stamp
 D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.dll
 D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.pdb
+D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.csprojAssemblyReference.cache

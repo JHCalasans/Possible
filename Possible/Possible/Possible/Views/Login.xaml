@@ -23,7 +23,14 @@
         <Button Text="LogIn"  BackgroundColor="Black"  Command="{Binding LoginCommand}" 
                 TextColor="White" AbsoluteLayout.LayoutBounds="0.5,0.7,200,50" AbsoluteLayout.LayoutFlags="PositionProportional" ></Button>
 
-        <Label Text="CREATE USER" AbsoluteLayout.LayoutBounds="0.75,0.9,200,50" AbsoluteLayout.LayoutFlags="PositionProportional" FontSize="16" FontAttributes="Bold">
+
+        <Label Text="Use WCF service" AbsoluteLayout.LayoutBounds="0.5,0.83,200,50" AbsoluteLayout.LayoutFlags="PositionProportional" FontSize="16"></Label>
+
+        <Switch IsToggled="{Binding UseWCF}" AbsoluteLayout.LayoutBounds="0.7,0.8,50,50" AbsoluteLayout.LayoutFlags="PositionProportional"></Switch>
+          
+      
+
+        <Label Text="CREATE USER" AbsoluteLayout.LayoutBounds="0.75,0.95,200,50" AbsoluteLayout.LayoutFlags="PositionProportional" FontSize="16" FontAttributes="Bold">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding GoToUserCommand}"></TapGestureRecognizer>
             </Label.GestureRecognizers>

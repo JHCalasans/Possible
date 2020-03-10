@@ -27,6 +27,15 @@ namespace Possible.ViewModels
 
         }
 
+        private Boolean _useWCF;
+
+        public Boolean UseWCF
+        {
+            get { return _useWCF; }
+            set { SetProperty(ref _useWCF, value); }
+
+        }
+
         private String _password;
 
         public String Password
@@ -39,7 +48,7 @@ namespace Possible.ViewModels
         public LoginViewModel(INavigationService navigationService, IPageDialogService dialogService)
             : base(navigationService, dialogService)
         {
-
+            UseWCF = false;
         }
 
         private async void GoToUser()
@@ -52,16 +61,28 @@ namespace Possible.ViewModels
             try
             {
                 UserDialogs.Instance.ShowLoading("Loading...");
-                User user = await App.SQLiteDb.GetUserAsync(Name, Password);
-                if (user == null)
-                    await DialogService.DisplayAlertAsync("Aviso", "Falha ao inserir usuário", "OK");
+                if (!UseWCF)
+                {
+                    User user = await App.SQLiteDb.GetUserAsync(Name, Password);
+                    if (user == null)
+                        await DialogService.DisplayAlertAsync("Aviso", "Falha ao inserir usuário", "OK");
+                    else
+                    {
+                        Preferences.Set("LoggedUserID", user.UserID);
+                        Preferences.Set("LoggedUserName", user.Name);
+
+                        await NavigationService.NavigateAsync("//NavigationPage/MainPage");
+                    }
+                }
                 else
                 {
-                    Preferences.Set("LoggedUserID", user.UserID);
-                    Preferences.Set("LoggedUserName", user.Name);
-                   
-                    await NavigationService.NavigateAsync("//NavigationPage/MainPage");
-                }
+                    
+                    ServiceReference1.IService1 client = new ServiceReference1.Service1Client(;
+                    ServiceReference1.User usr = new ServiceReference1.User();
+                    usr.Name = "teste";
+                    usr.Password = "teste";
+                    var result = await client.GetDatasAsync();
+                }                
             }catch(Exception e)
             {
                 await DialogService.DisplayAlertAsync("Aviso", "Falha ao inserir usuário", "OK");
