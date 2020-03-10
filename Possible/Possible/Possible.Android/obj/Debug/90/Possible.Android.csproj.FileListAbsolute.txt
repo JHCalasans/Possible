@@ -623,8 +623,6 @@ D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.Drawing.Common.dll
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.Drawing.Common.pdb
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.Globalization.dll
-D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.IdentityModel.dll
-D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.IdentityModel.pdb
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.IO.Compression.dll
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.IO.Compression.FileSystem.dll
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.IO.Compression.FileSystem.pdb
@@ -643,12 +641,8 @@ D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.Runtime.Extensions.dll
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.Runtime.Serialization.dll
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.Runtime.Serialization.pdb
-D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.ServiceModel.dll
-D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.ServiceModel.Http.dll
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.ServiceModel.Internals.dll
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.ServiceModel.Internals.pdb
-D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.ServiceModel.pdb
-D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.ServiceModel.Primitives.dll
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.Threading.dll
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.Threading.Tasks.dll
 D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.Transactions.dll
@@ -1053,3 +1047,4 @@ C:\Users\17254\source\repos\Possible\Possible\Possible\Possible.Android\obj\Debu
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.ServiceModel.pdb
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\System.ServiceModel.Primitives.dll
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\src\crc648060dc286b4f36d7\CustomEntryRenderer.java
+D:\Repositorios\Possible\Possible\Possible\Possible.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll

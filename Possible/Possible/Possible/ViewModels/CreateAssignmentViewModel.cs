@@ -128,6 +128,7 @@ namespace Possible.ViewModels
                                     else
                                     {
                                         Assignment = JsonConvert.DeserializeObject<Assignment>(respStr);
+                                        Assignment.AssignmentDate = Convert.ToDateTime(Assignment.DateString);
                                         MessagingCenter.Send(this, "AssignmentCreated", Assignment);
                                         Assignment = new Assignment();
                                         await DialogService.DisplayAlertAsync("Succes", "Assignment saved", "OK");

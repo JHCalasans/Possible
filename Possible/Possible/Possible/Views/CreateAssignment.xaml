@@ -14,7 +14,7 @@
                Text="{Binding Assignment.Title}" HorizontalTextAlignment="Center" PlaceholderColor="Gray"></Entry>
 
         <Label Text="Assignment Date:"></Label>
-        <DatePicker  Date="{Binding Assignment.Date}"  MinimumDate="{Binding CurrentDate}"></DatePicker>
+        <DatePicker  Date="{Binding Assignment.AssignmentDate}"  MinimumDate="{Binding CurrentDate}"></DatePicker>
 
         <Label Text="Assignment Color:"></Label>
         <Picker Title="Choose a color" ItemsSource="{Binding Colors}" SelectedItem="{Binding SelectedColor}" 

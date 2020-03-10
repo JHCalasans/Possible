@@ -50,7 +50,7 @@ namespace Possible.ViewModels
 
         public static string GetUrlBase()
         {
-            return "http://172.18.6.61:60292/Service1.svc/";
+            return "http://192.168.0.4:60292/Service1.svc/";
 
         }
 

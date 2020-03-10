@@ -1678,7 +1678,7 @@
       ]
     },
     "System.Net.Http/4.3.4": {
-      "sha512": "Fj7e73NNHwof97gFPTJuq8gv6G895yxkZt14DVnZdEh4gvKl8WrksCwNjIp/JeYX/yu/qxM/iOv9ai+ZY3Fp7Q==",
+      "sha512": "aOa2d51SEbmM+H+Csw7yJOuNZoHkrP2XnAurye5HWYgGVVU54YZDvsLUYRv6h18X3sPnjNCANmN7ZhIPiqMcjA==",
       "type": "package",
       "path": "system.net.http/4.3.4",
       "files": [
@@ -2317,24 +2317,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\17254\\.nuget\\packages\\": {},
+    "C:\\Users\\João\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
+      "projectUniqueName": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
       "projectName": "Possible.iOS",
-      "projectPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
-      "packagesPath": "C:\\Users\\17254\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\obj\\",
+      "projectPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
+      "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
+      "outputPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\17254\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2348,8 +2348,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {
-              "projectPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj"
+            "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {
+              "projectPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj"
             }
           }
         }
