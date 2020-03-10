@@ -31,9 +31,6 @@
                 <DataTemplate>
                     <ViewCell >
                         <StackLayout BackgroundColor="LightGray" Orientation="Horizontal" Margin="0,5,0,5">
-                            <!--<StackLayout.GestureRecognizers>
-                               
-                            </StackLayout.GestureRecognizers>-->
                             <Label Text="{Binding ItemDescription}" TextColor="Black" FontSize="Large"/>
 
                             <Label Text="REMOVE" TextColor="DarkRed" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" 

@@ -21,6 +21,8 @@ namespace Possible.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+      
+
         public ViewModelBase(INavigationService navigationService)
         {
             NavigationService = navigationService;
@@ -45,8 +47,13 @@ namespace Possible.ViewModels
         {
 
         }
- 
-       
+
+        public static string GetUrlBase()
+        {
+            return "http://172.18.6.61:60292/Service1.svc/";
+
+        }
+
         public virtual void Destroy()
         {
 

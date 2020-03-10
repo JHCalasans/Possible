@@ -4,7 +4,8 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Possible.Views.Login"
-             xmlns:customs="clr-namespace:Possible.Customs">
+             xmlns:customs="clr-namespace:Possible.Customs"
+             xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms">
 
     <AbsoluteLayout>
 
@@ -26,7 +27,11 @@
 
         <Label Text="Use WCF service" AbsoluteLayout.LayoutBounds="0.5,0.83,200,50" AbsoluteLayout.LayoutFlags="PositionProportional" FontSize="16"></Label>
 
-        <Switch IsToggled="{Binding UseWCF}" AbsoluteLayout.LayoutBounds="0.7,0.8,50,50" AbsoluteLayout.LayoutFlags="PositionProportional"></Switch>
+        <Switch IsToggled="{Binding UseWCF}"  AbsoluteLayout.LayoutBounds="0.7,0.8,50,50"  AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Switch.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="Toggled" Command="{Binding SwitchCommand}"  ></behaviors:EventToCommandBehavior>
+            </Switch.Behaviors>
+        </Switch>
           
       
 

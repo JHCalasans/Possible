@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using Newtonsoft.Json;
 using Possible.Models;
 using Possible.Views;
 using Prism.Commands;
@@ -9,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -93,6 +95,8 @@ namespace Possible.ViewModels
             {
                 ListObject objeto = new ListObject() { ItemID = args.ItemID, ItemDescription = args.Description };
                 AssignmentsAgrupados.Add(objeto);
+                if (Itens == null)
+                    Itens = new List<Item>();
                 Itens.Add(args);
 
             });
@@ -121,21 +125,79 @@ namespace Possible.ViewModels
             try
             {
                 UserDialogs.Instance.ShowLoading("Loading...");
-                Itens = await App.SQLiteDb.GetItensByUserAsync(Preferences.Get("LoggedUserID", 0));
-                var navParam = new NavigationParameters();
-                AssignmentsAgrupados = new ObservableCollection<ListObject>();
 
-                ListObject listaObj;
-                foreach (Item element in Itens)
+                bool useWCF = Preferences.Get("UseWCF", false);
+                AssignmentsAgrupados = new ObservableCollection<ListObject>();
+                if (!useWCF)
                 {
-                    listaObj = new ListObject() { ItemDescription = element.Description, ItemID = element.ItemID };
-                    List<Assignment> ListAssignments = await App.SQLiteDb.GetAssignmentsByItemAsync(element.ItemID);
-                    foreach (Assignment assi in ListAssignments)
+                    Itens = await App.SQLiteDb.GetItensByUserAsync(Preferences.Get("LoggedUserID", 0));
+                    //AssignmentsAgrupados = new ObservableCollection<ListObject>();
+
+                    ListObject listaObj;
+                    foreach (Item element in Itens)
                     {
-                        listaObj.Add(assi);
+                        listaObj = new ListObject() { ItemDescription = element.Description, ItemID = element.ItemID };
+                        List<Assignment> ListAssignments = await App.SQLiteDb.GetAssignmentsByItemAsync(element.ItemID);
+                        foreach (Assignment assi in ListAssignments)
+                        {
+                            listaObj.Add(assi);
+                        }
+                        AssignmentsAgrupados.Add(listaObj);
                     }
-                    AssignmentsAgrupados.Add(listaObj);
                 }
+                else
+                {
+                   // AssignmentsAgrupados = new ObservableCollection<ListObject>();
+                    var client = new HttpClient
+                    {
+                        Timeout = TimeSpan.FromMilliseconds(15000),
+                        BaseAddress = new Uri(GetUrlBase())
+                    };
+                    using (var response = await client.GetAsync("GetItensByUser/" + Preferences.Get("LoggedUserID", 0)))
+                    {
+                        if (response != null)
+                        {
+                            if (response.IsSuccessStatusCode)
+                            {
+                                var respStr = await response.Content.ReadAsStringAsync();
+                                if (!String.IsNullOrEmpty(respStr))
+                                {
+                                    Itens = JsonConvert.DeserializeObject<List<Item>>(respStr);
+                                    if (Itens.Count > 0)
+                                    {
+                                        using (var response2 = await client.GetAsync("GetAssignmentsByUser/" + Preferences.Get("LoggedUserID", 0)))
+                                        {
+                                            if (response2 != null)
+                                            {
+                                                if (response2.IsSuccessStatusCode)
+                                                {
+                                                    var respStr2 = await response2.Content.ReadAsStringAsync();
+                                                    if (!String.IsNullOrEmpty(respStr2))
+                                                    {
+                                                        AssignmentsAgrupados = JsonConvert.DeserializeObject<ObservableCollection<ListObject>>(respStr2);
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                await DialogService.DisplayAlertAsync("Warning", "Connection Failed", "OK");
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                            else
+                            {
+                                await DialogService.DisplayAlertAsync("Warning", "Connection Failed", "OK");
+                            }
+                        }
+                        else
+                        {
+                            await DialogService.DisplayAlertAsync("Warning", "Connection Failed", "OK");
+                        }
+                    }
+                }              
 
 
                 Periods = new List<DatePickerObject>
@@ -149,15 +211,13 @@ namespace Possible.ViewModels
             }
             catch (Exception e)
             {
-
+                await DialogService.DisplayAlertAsync("Warning", "Something went wrong", "OK");
             }
             finally
             {
                 UserDialogs.Instance.HideLoading();
             }
-            //EstadosAgrupados = Estados.records.GroupBy(r => r.fields.Regiao)
-            //    .Select(grp => grp.ToList())
-            //    .ToList();            
+                
 
         }
 
@@ -172,26 +232,28 @@ namespace Possible.ViewModels
             ListObject listaObj;
 
 
-
-            foreach (Item element in Itens)
+            if (Itens != null)
             {
-                listaObj = new ListObject() { ItemDescription = element.Description, ItemID = element.ItemID };
-                List<Assignment> ListAssignments = await App.SQLiteDb.GetAssignmentsByItemAsync(element.ItemID);
-                foreach (Assignment assi in ListAssignments)
+                foreach (Item element in Itens)
                 {
-                    if (SelectedPeriod.Value == 2 && DatesAreInTheSameWeek(assi.Date, DateTime.Now))
-                        listaObj.Add(assi);
-                    else if (SelectedPeriod.Value == 1 && DatesAreInTheSameDay(assi.Date, DateTime.Now))
-                        listaObj.Add(assi);
-                    else if (SelectedPeriod.Value == 3 && assi.Date.Month == DateTime.Now.Month && assi.Date.Year == DateTime.Now.Year)
-                        listaObj.Add(assi);
-                    else if (SelectedPeriod.Value == 4 && assi.Date.CompareTo(DateTime.Today) >= 0)
-                        listaObj.Add(assi);
+                    listaObj = new ListObject() { ItemDescription = element.Description, ItemID = element.ItemID };
+                    List<Assignment> ListAssignments = await App.SQLiteDb.GetAssignmentsByItemAsync(element.ItemID);
+                    foreach (Assignment assi in ListAssignments)
+                    {
+                        if (SelectedPeriod.Value == 2 && DatesAreInTheSameWeek(assi.AssignmentDate, DateTime.Now))
+                            listaObj.Add(assi);
+                        else if (SelectedPeriod.Value == 1 && DatesAreInTheSameDay(assi.AssignmentDate, DateTime.Now))
+                            listaObj.Add(assi);
+                        else if (SelectedPeriod.Value == 3 && assi.AssignmentDate.Month == DateTime.Now.Month && assi.AssignmentDate.Year == DateTime.Now.Year)
+                            listaObj.Add(assi);
+                        else if (SelectedPeriod.Value == 4 && assi.AssignmentDate.CompareTo(DateTime.Today) >= 0)
+                            listaObj.Add(assi);
 
+                    }
+                    listaObj.ItemID = element.ItemID;
+                    listaObj.ItemDescription = element.Description;
+                    AssignmentsAgrupados.Add(listaObj);
                 }
-                listaObj.ItemID = element.ItemID;
-                listaObj.ItemDescription = element.Description;
-                AssignmentsAgrupados.Add(listaObj);
             }
 
         }
@@ -207,7 +269,7 @@ namespace Possible.ViewModels
         private async void LogOff()
         {
             Preferences.Clear();
-            Application.Current.MainPage = new Login();
+            Application.Current.MainPage = new NavigationPage(new Login());
         }
 
         private async void RemoveItem(int? ItemID)

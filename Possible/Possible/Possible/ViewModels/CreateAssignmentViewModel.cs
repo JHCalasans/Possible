@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using Newtonsoft.Json;
 using Possible.Models;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -7,6 +8,9 @@ using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Possible.ViewModels
@@ -31,7 +35,7 @@ namespace Possible.ViewModels
             set { SetProperty(ref _labelItemDescription, value); }
 
         }
-        
+
         private DateTime _currentDate;
 
         public DateTime CurrentDate
@@ -71,7 +75,7 @@ namespace Possible.ViewModels
         public CreateAssignmentViewModel(INavigationService navigationService, IPageDialogService dialogService)
             : base(navigationService, dialogService)
         {
-            
+
         }
 
         private async void CreateAssignment()
@@ -87,12 +91,55 @@ namespace Possible.ViewModels
                     UserDialogs.Instance.ShowLoading("Loading...");
                     Assignment.Color = SelectedColor.Hexadecimal;
                     Assignment.ItemID = ItemObject.ItemID;
-                    if (Assignment.Date.CompareTo(DateTime.Now) < 0)
-                        Assignment.Date = CurrentDate;
-                    var resp = await App.SQLiteDb.SaveAssignmentAsync(Assignment);                    
-                    MessagingCenter.Send(this, "AssignmentCreated", Assignment);
-                    Assignment = new Assignment();
-                    await DialogService.DisplayAlertAsync("Succes", "Assignment saved", "OK");
+                    if (Assignment.AssignmentDate.CompareTo(DateTime.Now) < 0)
+                        Assignment.AssignmentDate = CurrentDate;
+                    Assignment.DateString = Assignment.AssignmentDate.ToString("MM/dd/yyyy");
+                    bool useWCF = Preferences.Get("UseWCF", false);
+                    if (!useWCF)
+                    {
+                        var resp = await App.SQLiteDb.SaveAssignmentAsync(Assignment);
+                        if (resp == 1)
+                        {
+                            MessagingCenter.Send(this, "AssignmentCreated", Assignment);
+                            Assignment = new Assignment();
+                            await DialogService.DisplayAlertAsync("Succes", "Assignment saved", "OK");
+                        }
+                        else
+                            await DialogService.DisplayAlertAsync("Warning", "Something went wrong", "OK");
+                    }
+                    else
+                    {
+                        var client = new HttpClient
+                        {
+                            Timeout = TimeSpan.FromMilliseconds(15000),
+                            BaseAddress = new Uri(GetUrlBase())
+                        };
+                        var json = JsonConvert.SerializeObject(Assignment);
+                        var content = new StringContent(json, Encoding.UTF8, "application/json");
+                        using (var response = await client.PostAsync("SaveAssignment", content))
+                        {
+                            if (response != null)
+                            {
+                                if (response.IsSuccessStatusCode)
+                                {
+                                    var respStr = await response.Content.ReadAsStringAsync();
+                                    if (String.IsNullOrEmpty(respStr))
+                                        await DialogService.DisplayAlertAsync("Warning", "Connection Failed", "OK");
+                                    else
+                                    {
+                                        Assignment = JsonConvert.DeserializeObject<Assignment>(respStr);
+                                        MessagingCenter.Send(this, "AssignmentCreated", Assignment);
+                                        Assignment = new Assignment();
+                                        await DialogService.DisplayAlertAsync("Succes", "Assignment saved", "OK");
+                                    }
+                                }
+                                else
+                                {
+                                    await DialogService.DisplayAlertAsync("Warning", "Connection Failed", "OK");
+                                }
+                            }
+                        }
+                    }
                 }
                 catch (Exception e)
                 {
@@ -120,9 +167,9 @@ namespace Possible.ViewModels
             {
                 ItemObject = (Item)parameters["Item"];
                 Assignment.ItemID = ItemObject.ItemID;
-                LabelItemDescription =  "Create new assignment for " + ItemObject.Description;
+                LabelItemDescription = "Create new assignment for " + ItemObject.Description;
             }
-                   
+
 
         }
     }

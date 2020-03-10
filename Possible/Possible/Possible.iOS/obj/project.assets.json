@@ -26,6 +26,15 @@
           "lib/xamarinios10/BTProgressHUD.dll": {}
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Prism.Core/7.2.0.1367": {
         "type": "package",
         "compile": {
@@ -107,6 +116,28 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {
@@ -317,7 +348,9 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.440",
+          "Newtonsoft.Json": "12.0.3",
           "Prism.Unity.Forms": "7.2.0.1367",
+          "System.Net.Http": "4.3.4",
           "System.ServiceModel.Duplex": "4.4.0",
           "System.ServiceModel.Http": "4.4.0",
           "System.ServiceModel.NetTcp": "4.4.0",
@@ -359,6 +392,15 @@
           "lib/xamarinios10/BTProgressHUD.dll": {}
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Prism.Core/7.2.0.1367": {
         "type": "package",
         "compile": {
@@ -440,6 +482,18 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netstandard1.3/System.Net.Http.dll": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {
@@ -650,7 +704,9 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.440",
+          "Newtonsoft.Json": "12.0.3",
           "Prism.Unity.Forms": "7.2.0.1367",
+          "System.Net.Http": "4.3.4",
           "System.ServiceModel.Duplex": "4.4.0",
           "System.ServiceModel.Http": "4.4.0",
           "System.ServiceModel.NetTcp": "4.4.0",
@@ -692,6 +748,15 @@
           "lib/xamarinios10/BTProgressHUD.dll": {}
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Prism.Core/7.2.0.1367": {
         "type": "package",
         "compile": {
@@ -773,6 +838,18 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {
@@ -983,7 +1060,9 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.440",
+          "Newtonsoft.Json": "12.0.3",
           "Prism.Unity.Forms": "7.2.0.1367",
+          "System.Net.Http": "4.3.4",
           "System.ServiceModel.Duplex": "4.4.0",
           "System.ServiceModel.Http": "4.4.0",
           "System.ServiceModel.NetTcp": "4.4.0",
@@ -1025,6 +1104,15 @@
           "lib/xamarinios10/BTProgressHUD.dll": {}
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Prism.Core/7.2.0.1367": {
         "type": "package",
         "compile": {
@@ -1106,6 +1194,18 @@
         },
         "runtime": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
         }
       },
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {
@@ -1316,7 +1416,9 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.440",
+          "Newtonsoft.Json": "12.0.3",
           "Prism.Unity.Forms": "7.2.0.1367",
+          "System.Net.Http": "4.3.4",
           "System.ServiceModel.Duplex": "4.4.0",
           "System.ServiceModel.Http": "4.4.0",
           "System.ServiceModel.NetTcp": "4.4.0",
@@ -1389,6 +1491,37 @@
         "lib/xamarinios10/BTProgressHUD.dll",
         "lib/xamarinios10/BTProgressHUD.pdb",
         "lib/xamarinios10/BTProgressHUD.xml"
+      ]
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "Prism.Core/7.2.0.1367": {
@@ -1542,6 +1675,48 @@
         "lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll",
         "sqlitepclraw.provider.sqlite3.ios_unified.1.1.13.nupkg.sha512",
         "sqlitepclraw.provider.sqlite3.ios_unified.nuspec"
+      ]
+    },
+    "System.Net.Http/4.3.4": {
+      "sha512": "Fj7e73NNHwof97gFPTJuq8gv6G895yxkZt14DVnZdEh4gvKl8WrksCwNjIp/JeYX/yu/qxM/iOv9ai+ZY3Fp7Q==",
+      "type": "package",
+      "path": "system.net.http/4.3.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/Xamarinmac20/_._",
+        "lib/monoandroid10/_._",
+        "lib/monotouch10/_._",
+        "lib/net45/_._",
+        "lib/net46/System.Net.Http.dll",
+        "lib/portable-net45+win8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/Xamarinmac20/_._",
+        "ref/monoandroid10/_._",
+        "ref/monotouch10/_._",
+        "ref/net45/_._",
+        "ref/net46/System.Net.Http.dll",
+        "ref/netcore50/System.Net.Http.dll",
+        "ref/netstandard1.1/System.Net.Http.dll",
+        "ref/netstandard1.3/System.Net.Http.dll",
+        "ref/portable-net45+win8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll",
+        "runtimes/win/lib/net46/System.Net.Http.dll",
+        "runtimes/win/lib/netcore50/System.Net.Http.dll",
+        "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
+        "system.net.http.4.3.4.nupkg.sha512",
+        "system.net.http.nuspec"
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.5.2": {
@@ -2132,32 +2307,34 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "Acr.UserDialogs >= 7.1.0.440",
+      "Newtonsoft.Json >= 12.0.3",
       "Possible >= 1.0.0",
       "Prism.Unity.Forms >= 7.2.0.1367",
+      "System.Net.Http >= 4.3.4",
       "Xamarin.Essentials >= 1.5.1",
       "Xamarin.Forms >= 4.5.0.356",
       "sqlite-net-pcl >= 1.6.292"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\João\\.nuget\\packages\\": {},
+    "C:\\Users\\17254\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
       "projectName": "Possible.iOS",
-      "projectPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
-      "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible.iOS\\obj\\",
+      "projectPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\Possible.iOS.csproj",
+      "packagesPath": "C:\\Users\\17254\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\17254\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2171,8 +2348,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {
-              "projectPath": "D:\\Repositorios\\Possible\\Possible\\Possible\\Possible\\Possible.csproj"
+            "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj": {
+              "projectPath": "C:\\Users\\17254\\source\\repos\\Possible\\Possible\\Possible\\Possible\\Possible.csproj"
             }
           }
         }
@@ -2185,9 +2362,17 @@
             "target": "Package",
             "version": "[7.1.0.440, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.3, )"
+          },
           "Prism.Unity.Forms": {
             "target": "Package",
             "version": "[7.2.0.1367, )"
+          },
+          "System.Net.Http": {
+            "target": "Package",
+            "version": "[4.3.4, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",

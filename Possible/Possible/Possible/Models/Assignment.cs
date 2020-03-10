@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Newtonsoft.Json;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,13 +12,14 @@ namespace Possible.Models
         [PrimaryKey, AutoIncrement]
         public int AssignmentID { get; set; }
         public string Title { get; set; }
-        public DateTime Date { get; set; }
+        [JsonIgnore]
+        public DateTime AssignmentDate { get; set; }
         public String Color { get; set; }
         public int ItemID { get; set; }
 
         public String DateString 
         { 
-            get { return Date.ToString("MM/dd/yyyy"); }
+            get ; set ; 
         }
 
 

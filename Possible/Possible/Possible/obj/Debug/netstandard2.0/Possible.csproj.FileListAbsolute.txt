@@ -11,7 +11,6 @@ C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netsta
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.AssemblyInfoInputs.cache
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.AssemblyInfo.cs
-C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.dll
 C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.pdb
 D:\Repositorios\Possible\Possible\Possible\Possible\bin\Debug\netstandard2.0\Possible.deps.json
@@ -31,3 +30,5 @@ D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Xam
 D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.dll
 D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.pdb
 D:\Repositorios\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Possible.csprojAssemblyReference.cache
+C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\Views\CreateAssignment.xaml.g.cs
+C:\Users\17254\source\repos\Possible\Possible\Possible\Possible\obj\Debug\netstandard2.0\XamlC.stamp

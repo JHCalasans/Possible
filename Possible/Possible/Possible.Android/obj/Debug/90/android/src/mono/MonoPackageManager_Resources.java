@@ -6,6 +6,7 @@ public class MonoPackageManager_Resources {
 		"Acr.UserDialogs.dll",
 		"AndHUD.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.dll",
 		"Possible.dll",
 		"Prism.dll",
 		"Prism.Forms.dll",
